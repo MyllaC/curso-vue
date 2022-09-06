@@ -9,10 +9,16 @@
       <li>React</li>
     </ul>
     <p v-show="mostrar_email">Mande uma mensagem para: {{ email }}</p>
+    <p>
+      Para acessar meu portfólio
+      <a v-bind:href="meu_link" target="_blank">basta clicar aqui</a>
+    </p>
+    <Picture />
   </div>
 </template>
 
 <script>
+import Picture from "./Picture.vue";
 export default {
   name: "Info",
   data() {
@@ -20,7 +26,9 @@ export default {
       esta_trabalhando: false,
       mostrar_email: false,
       email: "criscamila09@gmail.com",
+      meu_link: "https://github.com/MyllaC",
     };
   },
+  components: { Picture },
 };
 </script>
