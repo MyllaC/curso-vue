@@ -8,6 +8,9 @@
       <li>Java</li>
       <li>React</li>
     </ul>
+    <div>
+      <button @click="showEmail">{{ textoBotao }}</button>
+    </div>
     <p v-show="mostrar_email">Mande uma mensagem para: {{ email }}</p>
     <p>
       Para acessar meu portfólio
@@ -27,8 +30,19 @@ export default {
       mostrar_email: false,
       email: "criscamila09@gmail.com",
       meu_link: "https://github.com/MyllaC",
+      textoBotao: "Mostrar e-mail",
     };
   },
   components: { Picture },
+  methods: {
+    showEmail() {
+      this.mostrar_email = !this.mostrar_email;
+      if (!this.mostrar_email) {
+        this.textoBotao = "Mostrar e-mail";
+      } else {
+        this.textoBotao = "Ocultar e-mail";
+      }
+    },
+  },
 };
 </script>
