@@ -1,12 +1,13 @@
 <template>
   <div>
     <img :src="avatar" :alt="descricao" />
-    <Reutilizacao />
+    <MudarImagem @mudar-imagem="handleMudarImagem" />
   </div>
 </template>
 
 <script>
 import Reutilizacao from "./Reutilizacao.vue";
+import MudarImagem from "./MudarImagem.vue";
 export default {
   name: "Picture",
   data() {
@@ -15,6 +16,11 @@ export default {
       descricao: "Imagem de login",
     };
   },
-  components: { Reutilizacao },
+  methods: {
+    handleMudarImagem() {
+      this.avatar = "/img/avatar2.png";
+    },
+  },
+  components: { Reutilizacao, MudarImagem },
 };
 </script>
